@@ -54,7 +54,7 @@ class BeerTest extends PHPUnit_Framework_TestCase {
 
   public function testGetByID() {
 
-    OpenBeerDb\Configuration::$public_token = "";
+    OpenBeerDB\Configuration::$public_token = "";
     $beer = $this->Beer->id(7);
 
     $this->assertEquals(7, $beer->id);
