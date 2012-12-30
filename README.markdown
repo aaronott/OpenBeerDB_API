@@ -13,12 +13,15 @@ own database.
 
 This implementation allows someone to make calls back to their own server by
 changing the configuration in their calls
-  <pre>
-  OpenBeerDB\Configuration::$OpenBeerURI = "http://example.com";
-  </pre>
+  <pre>OpenBeerDB\Configuration::$OpenBeerURI = "http://example.com";</pre>
 
 ## How can I help?
 
 Open source works best if people are willing to help out. Take a look at the
 Open Beer Database found at http://openbeerdatabase.com and on github at 
 https://github.com/openbeerdatabase/openbeerdatabase
+
+## TODO
+
+This implementation doesn't yet allow for adding or updating objects. That's
+coming soon.
