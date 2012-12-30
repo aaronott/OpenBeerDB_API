@@ -48,10 +48,12 @@ class BreweryTest extends PHPUnit_Framework_TestCase {
   /**
    * This is a bug in the API itself. You currently cannot get beer or brewery
    * by id.
-   *
+   */
   public function testGetByID() {
+    OpenBeerDb\Configuration::$public_token = "";
     $brewery = $this->Brewery->id(2);
-    var_dump($brewery);
+
+    $this->assertEquals(2, $brewery->id);
+    $this->assertEquals('21st Amendment Brewing', $brewery->name);
   }
-   **/
 }

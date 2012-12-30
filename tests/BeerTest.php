@@ -52,13 +52,14 @@ class BeerTest extends PHPUnit_Framework_TestCase {
 
   }
 
-  /**
   public function testGetByID() {
 
-    //OpenBeerDb\Configuration::$public_token = "49141739348b87d4d0939190d394f0fb4b8fbc352f161bc037aa28bc0732b6eb";
+    OpenBeerDb\Configuration::$public_token = "";
     $beer = $this->Beer->id(7);
-    var_dump($beer);
+
+    $this->assertEquals(7, $beer->id);
+    $this->assertEquals('Back in Black', $beer->name);
+    $this->assertEquals('21st Amendment Brewing', $beer->brewery->name);
   }
-  **/
 
 }
