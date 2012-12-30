@@ -104,14 +104,15 @@ abstract class Common {
     $this->parameters['token'] = (strtoupper($method) == 'GET') ? 
       Configuration::$public_token : Configuration::$private_token;
 
+    $params = $this->parameters;
     // because the sort stuff is actually called order, we need to rebuild 
     // that.
-    $this->parameters['order'] = $this->parameters['sortKey'] . ' ' . $this->parameters['sortDirection'];
+    $params['order'] = $this->parameters['sortKey'] . ' ' . $this->parameters['sortDirection'];
 
-    unset($this->parameters['sortKey']);
-    unset($this->parameters['sortDirection']);
+    unset($params['sortKey']);
+    unset($params['sortDirection']);
 
-    $uri .= '?' . http_build_query($this->parameters);
+    $uri .= '?' . http_build_query($params);
 
     $this->lastCall = $uri;
 
