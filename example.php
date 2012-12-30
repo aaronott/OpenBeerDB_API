@@ -10,7 +10,6 @@ require_once 'OpenBeerDB.php';
 $OBBeer = OpenBeerDB::factory('Beer');
 $OBBrewery = OpenBeerDB::factory('Brewery');
 
-//$OBBeer->query = 'Back in Black';
 $OBBeer->query = 'in';
 $result = $OBBeer->get();
 
@@ -23,6 +22,4 @@ foreach ($result->beers as $beer) {
   $brewery = $OBBrewery->id($beer->brewery->id);
   echo "\nBrought to you by the fine folks at '" . $brewery->name . "'\n";
   echo "Visit them and say thank you at " . $brewery->url . "\n";
-
-
 }
