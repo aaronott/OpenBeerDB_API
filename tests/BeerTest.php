@@ -14,6 +14,9 @@ class BeerTest extends PHPUnit_Framework_TestCase {
     $this->Beer = OpenBeerDB::factory('Beer');
   }
 
+  /**
+   * @covers Beer::get
+   */
   public function testListBeers() {
    $beer = $this->Beer->get();
 
@@ -26,28 +29,9 @@ class BeerTest extends PHPUnit_Framework_TestCase {
    $this->assertEquals(50, sizeof($beer->beers));
   }
 
-  public function testSettingVariables() {
-    $this->assertEquals(1, $this->Beer->page);
-    $this->Beer->page = 2;
-    $this->assertEquals(2, $this->Beer->page);
-
-    $this->assertEquals(50, $this->Beer->perPage);
-    $this->Beer->perPage = 25;
-    $this->assertEquals(25, $this->Beer->perPage);
-
-    $this->assertEquals('id', $this->Beer->sortKey);
-    $this->Beer->sortKey = 'name';
-    $this->assertEquals('name', $this->Beer->sortKey);
-
-    $this->assertEquals('ASC', $this->Beer->sortDirection);
-    $this->Beer->sortDirection = 'DESC';
-    $this->assertEquals('DESC', $this->Beer->sortDirection);
-
-    $this->assertEquals('', $this->Beer->query);
-    $this->Beer->query = 'query';
-    $this->assertEquals('query', $this->Beer->query);
-  }
-
+  /**
+   * @covers Common::set_query
+   */
   public function testQuery() {
     $this->Beer->query = 'Back in Black';
     $this->assertEquals('Back in Black', $this->Beer->query);
@@ -68,12 +52,13 @@ class BeerTest extends PHPUnit_Framework_TestCase {
 
   }
 
+  /**
   public function testGetByID() {
 
-    OpenBeerDb\Configuration::$public_token = "49141739348b87d4d0939190d394f0fb4b8fbc352f161bc037aa28bc0732b6eb";
-
+    //OpenBeerDb\Configuration::$public_token = "49141739348b87d4d0939190d394f0fb4b8fbc352f161bc037aa28bc0732b6eb";
     $beer = $this->Beer->id(7);
-
-    print_r($beer);
+    var_dump($beer);
   }
+  **/
+
 }

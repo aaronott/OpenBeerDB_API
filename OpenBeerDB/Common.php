@@ -112,8 +112,6 @@ abstract class Common {
     unset($this->parameters['sortDirection']);
 
     $uri .= '?' . http_build_query($this->parameters);
-    //$params = array('token' => $this->parameters['token']);
-    //$uri .= '?' . http_build_query($params);
 
     $this->lastCall = $uri;
 
