@@ -49,7 +49,6 @@ class BeerTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(2, $beer->beers[0]->brewery->id);
     $this->assertTrue(isset($beer->beers[0]->brewery->name));
     $this->assertEquals('21st Amendment Brewing', $beer->beers[0]->brewery->name);
-
   }
 
   public function testGetByID() {
@@ -61,5 +60,4 @@ class BeerTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('Back in Black', $beer->name);
     $this->assertEquals('21st Amendment Brewing', $beer->brewery->name);
   }
-
 }
